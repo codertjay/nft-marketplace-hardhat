@@ -2,6 +2,8 @@ require("@nomiclabs/hardhat-waffle");
 
 const fs = require('fs')
 const privateKey = fs.readFileSync('.secret').toString()
+console.log(privateKey)
+const projectId = '15088af646dd644ffbb77dbd'
 
 module.exports = {
     networks: {
@@ -9,12 +11,12 @@ module.exports = {
             chainId: 1337
         },
         mumbai: {
-            url: 'https://speedy-nodes-nyc.moralis.io/15088af646dd644ffbb77dbd/polygon/mumbai',
-            account: [privateKey]
+            url: `https://speedy-nodes-nyc.moralis.io/${projectId}/polygon/mumbai`,
+            accounts: [privateKey]
         },
         mainnet: {
-            url: 'https://speedy-nodes-nyc.moralis.io/15088af646dd644ffbb77dbd/polygon/mainnet',
-            account: [privateKey]
+            url: `https://speedy-nodes-nyc.moralis.io/${projectId}/polygon/mainnet`,
+            accounts: [privateKey]
 
         },
     },
